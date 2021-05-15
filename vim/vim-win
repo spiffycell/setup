@@ -1,0 +1,1 @@
+gnome-terminal --geometry 181x52-0-0 -e 'vim'

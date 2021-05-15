@@ -1,0 +1,7 @@
+angr==9.0.4663
+pwn==1.0
+pycryptodome==3.9.9
+rich==9.2.0
+uncompyle6==3.7.4
+pynvim==0.4.2
+jedi==0.18.0
