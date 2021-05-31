@@ -1,7 +1,6 @@
 autocmd vimenter * NERDTree
 let g:gitgutter_enabled = 1
 set background=dark
-color synthwave
 
 if has('termguicolors')
 	set termguicolors " 24-bit terminal
@@ -15,6 +14,7 @@ set tabstop=4
 syntax on
 botright terminal
 resize 15
+
 set backupdir=.backup/,~/.backup/,/tmp//
 set directory=.swp/,~/.swp,/tmp//
 set undodir=.undo/,~/.undo/,/tmp//
