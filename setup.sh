@@ -70,3 +70,9 @@ done
 #
 
 ./vim/vim-setup.sh
+
+#
+# tmux setup
+#
+
+cp tmux/tmux.conf ~/.tmux.conf
