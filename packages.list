@@ -17,7 +17,6 @@ tor
 proxychains
 neovim
 jq
-nslookup
 whois
 curl
 nmap
