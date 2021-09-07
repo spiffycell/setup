@@ -66,7 +66,7 @@ done
 (cd /opt/; sudo git clone https://github.com/leapsecurity/InSpy)
 
 #
-# vim installation && setup
+# vim setup
 #
 
 ./vim/vim-setup.sh
@@ -76,3 +76,19 @@ done
 #
 
 cp tmux/tmux.conf ~/.tmux.conf
+
+
+#
+# BBTK
+#
+
+git clone https://github.com/AlexisAhmed/BugBountyToolkit.git
+cd BugBountyToolkit
+chmod +x install.sh
+./install.sh
+
+#
+# MSF
+#
+
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
