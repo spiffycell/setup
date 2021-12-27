@@ -1,0 +1,52 @@
+" basics
+set encoding=utf-8
+set number
+
+" case
+set ignorecase
+set smartcase
+set incsearch
+set lazyredraw
+set magic
+set showmatch
+
+set backspace=indent,eol,start
+set mouse=a
+let g:gitgutter_enabled = 1
+
+" tabs + spaces
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+
+syntax enable
+resize 15
+
+" backupconfigs
+set backupdir=.backup/,~/.backup/,/tmp//
+set directory=.swp/,~/.swp,/tmp//
+set undodir=.undo/,~/.undo/,/tmp//
+
+" Disable scrollbars
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+
+" colors scheme
+set background=dark
+
+" more
+set ruler
+set cmdheight=1
+set hid
+set hlsearch
+set foldcolumn=1
+
+" lines
+set lbr
+set tw=500
+set ai
+set si
+set wrap
