@@ -20,18 +20,20 @@ function determine_os() {
 
     # check if linux
     if [[ "$sysinfo" =~ "Linux" ]]; then
-   
-        # 
-        ostype=$LINUX
-
+        
         # determine Linux distro
         if [[ "$sysinfo" =~ "Debian" ]] || [[ "$sysinfo" =~ "Ubuntu" ]]; then
 
             ostype=$DEBIAN
+            echo $ostype
 
         elif [[ "$sysinfo" =~ "Fedora" ]] || [[ "$sysinfo" =~ "CentOS" ]]; then
         
             ostype=$FEDORA
+            echo $ostype
+        else
+            printf "[-] Sorry, this script is only for Linux distros!"
+            exit 1
         fi
     fi
 }
@@ -42,6 +44,7 @@ function add_gpg_key() {
     printf "[*] Adding official docker GPG key\n"
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 }
+
 
 function install() {
     
@@ -77,7 +80,8 @@ function install() {
         printf "[*] Installing Docker Engine...\n"
         sudo dnf install -y docker-ce docker-ce-cli containerd.io
     else
-        printf "[-] Sorry, this script is only for Linux distros!"
+        printf "[-] An unexpected error occurred\n"
+        printf "DEBUG: os type - $systype"
         exit 1
     fi
 }
