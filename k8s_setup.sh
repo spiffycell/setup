@@ -17,12 +17,13 @@ sudo hostnamectl set-hostname master-node
 sudo apt-get install apt-transport-https curl
 
 # get key add to package repo
-curl -s $K8S_KEY_URL | sudo apt-key add .
+curl -s 'https://packages.cloud.google.com/apt/doc/apt-key.gpg' | sudo apt-key add -
 
 # install packages and validate version
-sudo apt-get install kubeadm kubelet kubectl
 sudo apt-get update
+sudo apt-get install kubeadm kubelet kubectl
 kubeadm version && kubelet --version && kubectl version
+exit 0
 
 # run 
 kubeadm init --pod-network=$POD_NET_CIDR_BLOCK --apiserver-advertise-address=$APISERV_ADDR
