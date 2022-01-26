@@ -1,6 +1,1 @@
-angr==9.0.4663
-pwn==1.0
-pycryptodome==3.9.9
-uncompyle6==3.7.4
-pynvim==0.4.2
-jedi==0.18.0
+pre-commit==2.17.0
