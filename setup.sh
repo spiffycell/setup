@@ -23,8 +23,10 @@ docker-ce \
 docker-ce-cli \
 containerd.io
 
+# update packages
+sudo apt autoremove
+
 # adjust docker group membership
-sudo groupadd docker
 sudo usermod -aG docker $(whoami)
 
 # pip install requirements
