@@ -22,7 +22,6 @@ pip install --upgrade pip
 #snap install code
 snap install spotify
 snap install xmind
-snap install pre-commit --classic
 
 # special packages
 
