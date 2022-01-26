@@ -14,7 +14,9 @@ sudo apt-get install -y $(awk '{print $1}' packages.list)
 
 # pip install requirements
 echo "[*] Installing Pip3 Packages"
-#pip3 install -r requirements.txt
+pip3 install -r requirements.txt
+pip3 install --upgrade pip
+pip install --upgrade pip
 
 # install snaps
 #snap install code
