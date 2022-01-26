@@ -23,12 +23,9 @@ snap install xmind
 
 # special packages
 
-# oh-my-zsh
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # clone and copy bin repo contents into /usr/local/bin
 git clone git@github.com:spiffycell/bin.git
-sudo cp -r ../bin/local-bins/* /usr/local/bin/
+sudo cp -r bin/local-bins/* /usr/local/bin/
 rm -rf bin
 
 #
@@ -39,6 +36,14 @@ cp vim/vimrc ~/.vim/vimrc
 #
 # tmux setup
 #
-
 cp tmux/tmux.conf ~/.tmux.conf
+
+#
+# add zsh as default, and alias vim to nvim
+#
+echo 'exec zsh' >> ~/.bashrc
+echo 'alias vim="nvim"' >> ~/.zshrc
+
+# oh-my-zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
