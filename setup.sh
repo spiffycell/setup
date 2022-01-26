@@ -23,6 +23,10 @@ docker-ce \
 docker-ce-cli \
 containerd.io
 
+# adjust docker group membership
+sudo groupadd docker
+sudo usermod -aG docker $(whoami)
+
 # pip install requirements
 echo "[*] Installing Pip3 Packages"
 pip3 install -r requirements.txt
