@@ -12,6 +12,17 @@ set -o pipefail
 echo '[*] Installing Ubuntu Packages'
 sudo apt-get install -y $(awk '{print $1}' packages.list)
 
+# install docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor \
+	-o /usr/share/keyrings/docker-archive-keyring.gpg
+	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+		$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install \
+docker-ce \
+docker-ce-cli \
+containerd.io
+
 # pip install requirements
 echo "[*] Installing Pip3 Packages"
 pip3 install -r requirements.txt
@@ -24,7 +35,6 @@ snap install spotify
 snap install xmind
 
 # special packages
-
 # clone and copy bin repo contents into /usr/local/bin
 git clone git@github.com:spiffycell/bin.git
 sudo cp -r bin/local-bins/* /usr/local/bin/
