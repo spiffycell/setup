@@ -20,6 +20,7 @@ echo "[*] Installing Pip3 Packages"
 #snap install code
 snap install spotify
 snap install xmind
+snap install pre-commit --classic
 
 # special packages
 
