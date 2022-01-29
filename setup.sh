@@ -49,7 +49,8 @@ rm -rf bin
 #
 # vim setup
 #
-cp vim/vimrc ~/.vim/vimrc
+cp vim/vimrc $HOME/.vim/vimrc
+mkdir -p $HOME/.config/nvim; ln -s $HOME/.vim/vimrc $HOME/.config/nvim/init.vim
 
 #
 # tmux setup
@@ -70,3 +71,4 @@ echo 'alias vim="nvim"' >> ~/.zshrc
 # oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+mkdir -p ~/.config/nvim; ln -s ~/.vimrc ~/.config/nvim/init.vim
