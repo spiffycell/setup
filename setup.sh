@@ -57,6 +57,11 @@ cp vim/vimrc ~/.vim/vimrc
 cp tmux/tmux.conf ~/.tmux.conf
 
 #
+# vim-plug
+#
+sh -c 'curl -fLo /home/spiffycell/.local/share/nvim/site/autoload/plug.vim --create-dirs        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+#
 # add zsh as default, and alias vim to nvim
 #
 echo 'exec zsh' >> ~/.bashrc
