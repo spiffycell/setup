@@ -25,7 +25,7 @@ sudo apt-get install kubeadm kubelet kubectl
 kubeadm version && kubelet --version && kubectl version
 exit 0
 
-# run 
+# run
 kubeadm init --pod-network=$POD_NET_CIDR_BLOCK --apiserver-advertise-address=$APISERV_ADDR
 
 

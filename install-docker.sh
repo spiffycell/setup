@@ -9,7 +9,7 @@ FEDORA=200
 
 # determine os
 function determine_os() {
-    
+
     # check if system supports uname
     if command uname > /dev/null; then
         sysinfo="$(uname -a)"
@@ -20,7 +20,7 @@ function determine_os() {
 
     # check if linux
     if [[ "$sysinfo" =~ "Linux" ]]; then
-        
+
         # determine Linux distro
         if [[ "$sysinfo" =~ "Debian" ]] || [[ "$sysinfo" =~ "Ubuntu" ]]; then
 
@@ -28,7 +28,7 @@ function determine_os() {
             echo $ostype
 
         elif [[ "$sysinfo" =~ "Fedora" ]] || [[ "$sysinfo" =~ "CentOS" ]]; then
-        
+
             ostype=$FEDORA
             echo $ostype
         else
@@ -47,13 +47,13 @@ function add_gpg_key() {
 
 
 function install() {
-    
+
     # pass argv[1] as os type
     systype=$1
 
     if [[ "$systype" == "$DEBIAN" ]]; then
-        printf "[+] OS: Linux, Distribution: Debian-based\n\n"        
-        
+        printf "[+] OS: Linux, Distribution: Debian-based\n\n"
+
         # set up stable repo
         printf "[*] Setting up stable repo...\n"
         echo "deb [arch=$(dpkg --print-architecture) \
@@ -66,16 +66,16 @@ function install() {
         sudo apt-get update
         sudo apt-get install -y docker-ce docker-ce-cli containerd.io
     elif [[ "$systype" == "Fedora" ]]; then
-        printf "[+] OS: Linux, Distribution: Fedora-based\n\n"        
-   
+        printf "[+] OS: Linux, Distribution: Fedora-based\n\n"
+
         # install dnf-plugins-core
         printf "[*] Installing `dnf-plugins-core`\n"
         sudo dnf -y install dnf-plugins-core
-        
+
         # set up stable repository
         printf "[*] Setting up stable repo...\n"
         sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-        
+
         # install docker engine
         printf "[*] Installing Docker Engine...\n"
         sudo dnf install -y docker-ce docker-ce-cli containerd.io
@@ -92,4 +92,3 @@ os=$(determine_os)
 # run the install function
 add_gpg_key
 install $os
-

@@ -132,7 +132,7 @@ Plug '~/my-prototype-plugin'
 call plug#end()
 
 
-" autoload on vim 
+" autoload on vim
 " autocmd VimEnter * NERDTree
 " autocmd VimEnter * YcmCompleter
 autocmd VimEnter * GitGutterEnable
