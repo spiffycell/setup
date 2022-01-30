@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -eEu
+set -o pipefail
+
+###########################################
+##### CLEAN LOCAL BUILD ENVIRONMENT #######
+###########################################
+
+. sdlc/functions.sh
+
+sudo docker-compose down

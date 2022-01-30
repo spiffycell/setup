@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -eEu
+set -o pipefail
+
+########################################################
+##### TEST THE IMAGE       #############################
+########################################################
+
+. sdlc/bootstrap
+. sdlc/vars
+
+python3 -m pre_commit run --all-files --hook-stage manual
+
+sudo docker-compose up -d
+sleep 5
