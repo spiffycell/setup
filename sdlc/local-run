@@ -1,9 +1,0 @@
-#!/bin/bash
-
-set -eEu
-set -o pipefail
-
-sdlc/bootstrap
-sdlc/build
-sdlc/test
-sdlc/clean
