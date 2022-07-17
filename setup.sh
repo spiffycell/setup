@@ -7,6 +7,8 @@ set -o pipefail
 # enable debug
 # set -x
 
+# upload the fonts
+sudo cp -r fonts/*.ttf /usr/share/fonts/
 
 # install ubuntu packages
 echo '[*] Installing Ubuntu Packages'
